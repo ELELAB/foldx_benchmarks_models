@@ -66,7 +66,7 @@ def main():
             print seq[1][1]
             print ""
             if(seq_id_percent < 90 and seq_id_percent >= 70):
-                ninety_seventy[seq[0].split("_")[0]] = {"group" : "ninety_seventy",
+                ninety_seventy[seq[0].split("_")[0]] = {"group" : "90-70",
                                                     "pdb_id": seq[0].split("_")[0],
                                                     "chain" : seq[0].split("_")[-1],
                                                     "query_len" : len(raw_query_seq),
@@ -80,7 +80,7 @@ def main():
                                                     "alignment" : "".join(alignment),
                                                     }
             elif(seq_id_percent < 70 and seq_id_percent >= 50):
-                seventy_fifty[seq[0].split("_")[0]] = {"group" : "seventy_fifty",
+                seventy_fifty[seq[0].split("_")[0]] = {"group" : "70-50",
                                                     "pdb_id": seq[0].split("_")[0],
                                                     "chain" : seq[0].split("_")[-1],
                                                     "query_len" : len(raw_query_seq),
@@ -94,7 +94,7 @@ def main():
                                                     "alignment" : "".join(alignment),
                                                     }
             elif(seq_id_percent < 50 and seq_id_percent >= 30):
-                fifty_thirty[seq[0].split("_")[0]] = {"group" : "fifty_thirty",
+                fifty_thirty[seq[0].split("_")[0]] = {"group" : "50-30",
                                                     "pdb_id": seq[0].split("_")[0],
                                                     "chain" : seq[0].split("_")[-1],
                                                     "query_len" : len(raw_query_seq),
@@ -108,7 +108,7 @@ def main():
                                                     "alignment" : "".join(alignment),
                                                     }
             elif(seq_id_percent < 30 and seq_id_percent >= 20):
-                thirty_twenty[seq[0].split("_")[0]] = {"group" : "thirty_twenty",
+                thirty_twenty[seq[0].split("_")[0]] = {"group" : "30-20",
                                                     "pdb_id": seq[0].split("_")[0],
                                                     "chain" : seq[0].split("_")[-1],
                                                     "query_len" : len(raw_query_seq),
@@ -134,15 +134,15 @@ def main():
     print len(thirty_twenty)
     print thirty_twenty.keys()
     
-    pdb_downloader(ninety_seventy, "ninety_seventy")
-    pdb_downloader(seventy_fifty, "seventy_fifty")
-    pdb_downloader(fifty_thirty, "fifty_thirty")
-    pdb_downloader(thirty_twenty, "thirty_twenty")
+    pdb_downloader(ninety_seventy, "90-70")
+    pdb_downloader(seventy_fifty, "70-50")
+    pdb_downloader(fifty_thirty, "50-30")
+    pdb_downloader(thirty_twenty, "30-20")
        
-    pdb_parser(ninety_seventy, "ninety_seventy")
-    pdb_parser(seventy_fifty, "seventy_fifty")     
-    pdb_parser(fifty_thirty, "fifty_thirty")
-    pdb_parser(thirty_twenty, "thirty_twenty")
+    pdb_parser(ninety_seventy, "90-70")
+    pdb_parser(seventy_fifty, "70-50")     
+    pdb_parser(fifty_thirty, "50-30")
+    pdb_parser(thirty_twenty, "30-20")
      
     ninety_seventy_list = []
     seventy_fifty_list = []
