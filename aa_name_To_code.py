@@ -77,3 +77,6 @@ def one_to_whole(s):
     KeyError: 'y'
     '''
     return threeToWhole[Polypeptide.one_to_three(s)]
+
+def get_whole_to_three():
+    return wholeToThree
